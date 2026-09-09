@@ -7,3 +7,5 @@ Narzędzia:
 Git
 VS Code
 Node.js
+
+coś innego robię
