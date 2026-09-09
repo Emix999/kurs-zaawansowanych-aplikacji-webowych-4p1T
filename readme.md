@@ -7,3 +7,5 @@ Narzędzia:
 Git
 VS Code
 Node.js
+
+Dodje zmiany do testów
