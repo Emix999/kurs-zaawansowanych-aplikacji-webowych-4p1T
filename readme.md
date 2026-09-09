@@ -9,3 +9,4 @@ VS Code
 Node.js
 
 coś innego robię
+Dodje zmiany do testów
