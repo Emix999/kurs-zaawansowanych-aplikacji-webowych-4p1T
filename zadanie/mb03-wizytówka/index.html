@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizytówka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        Emilian Hernes jestem.
+    </header>
+    <nav>
+        <a href="#o-mnie">O mnie</a>
+        <a href="#umiejetnosci">Umiejętności</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+    <main>
+        <section id="o-mnie">
+            ;asdfhasjldfhskldajfhskldajfhskldajfh
+        </section>
+        <section id="umiejetnosci">
+            <ul id="lista-umijetnosci"></ul>
+        </section>
+        <section id="kontakt">
+            <form>
+                <label for="imie">Imie</label>
+                <input type="text" id="imie" name="imie">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+                <label for="temat">Temat</label>
+                <select name="temat" id="temat" name="temat">
+                    <option value="cos">cos</option>
+                    <option value="cos2">cos2</option>
+                    <option value="cos3">cos3</option>
+                </select>
+                <label for="tresc">Wiadomość</label>
+                <input type="textarea" id="tresc" name="tresc">
+                <button type="submit">Wyslij</button>
+            </form>
+            <div id="komunikat"></div>
+        </section>
+        <section><button id="licznik" onclick="zwiekszLicznik()">Guzik</button>
+        <p id="klikniecia"></p>
+    </section>
+    </main>
+    <footer>
+        rok 2026 zadanie z programowania aplikacji zaawansowanych webowych
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
