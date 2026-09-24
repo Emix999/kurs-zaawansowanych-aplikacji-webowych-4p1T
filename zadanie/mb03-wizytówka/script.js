@@ -16,4 +16,11 @@ document.addEventListener("submit", ()=>{
         document.getElementById("komunikat").textContent(`Udało się! imie to:${inputy[0]} temat: ${inputy[2]}`)
         document.getElementById("komunikat").style.color="black"
     }
-}) 
+})
+iloscKliknienc=0
+document.getElementById("klikniecia").textContent=`Liczba kliknięć: 0`
+
+function zwiekszLicznik(){
+    iloscKliknienc++
+    document.getElementById("klikniecia").textContent=`Liczba kliknięć: ${iloscKliknienc}`
+}
