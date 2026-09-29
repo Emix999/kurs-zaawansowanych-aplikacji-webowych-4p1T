@@ -6,12 +6,10 @@ const lista = [
     { nazwa: "Git", poziom: 1, kategoria: "narzedzia" },
     { nazwa: "Node.js", poziom: 2, kategoria: "backend" }
 ]
-let listaUmiejetnosc = document.querySelector("#lista-umijetnosci")
-for(let el of lista){
-    let element = document.createElement("li");
-    element.textContent = el
-    listaUmiejetnosc.appendChild(element)
-}
+const listaUmiejetnosc = document.querySelector("#lista-umijetnosci")
+listaUmiejetnosc.innerHTML = lista
+    .map(({nazwa, poziom})=> `<li>${nazwa} ${poziom}</li>`).join("")
+
 document.addEventListener("submit", ()=>{
     event.preventDefault()
     let inputy = document.querySelectorAll("input")
