@@ -20,9 +20,7 @@ document.addEventListener("submit", ()=>{
 let iloscKliknienc=0
 document.getElementById("klikniecia").textContent=`Liczba kliknięć: 0`
 
-function zwiekszLicznik(){
+document.getElementById("licznik").addEventListener("click",()=>{
     iloscKliknienc++
     document.getElementById("klikniecia").textContent=`Liczba kliknięć: ${iloscKliknienc}`
-}
-
-document.getElementById("licznik").addEventListener("click",()=>zwiekszLicznik())
+})
