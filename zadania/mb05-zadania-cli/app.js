@@ -17,4 +17,20 @@ switch (komenda) {
     });
     break;
   }
+
+  case "dodaj": {
+    const tekst = argument?.trim();
+
+    if (!tekst) {
+      console.error("Błąd: podaj treść zadania.");
+      break;
+    }
+
+    const zadania = await wczytaj();
+    const nowe = [...zadania, { tekst, zrobione: false }];
+
+    await zapisz(nowe);
+    console.log(`Dodano zadanie: ${tekst}`);
+    break;
+  }
 }
