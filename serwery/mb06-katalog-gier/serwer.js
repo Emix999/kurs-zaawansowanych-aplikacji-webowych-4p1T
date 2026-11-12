@@ -39,6 +39,20 @@ app.get("/szukaj", (req, res) => {
     res.json(wynik);
 });
 
+app.get("/statystyki", (req, res) => {
+    const sumaCen = gry.reduce((suma, gra) => suma + gra.cena, 0);
+    const sredniaCena = Math.round((sumaCen / gry.length) * 100) / 100;
+    const najdrozsza = gry.reduce((wynik, gra) =>
+        gra.cena > wynik.cena ? gra : wynik,
+    );
+
+    res.json({
+        liczbaGier: gry.length,
+        sredniaCena,
+        najdrozsza: najdrozsza.nazwa,
+    });
+});
+
 app.get("/gry/:id", (req, res) => {
     const id = Number(req.params.id);
     const gra = gry.find((element) => element.id === id);
