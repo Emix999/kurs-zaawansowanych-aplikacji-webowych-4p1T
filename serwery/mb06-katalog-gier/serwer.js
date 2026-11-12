@@ -18,6 +18,27 @@ app.get("/gry", (req, res)=>{
     res.json(gry);
 });
 
+app.get("/szukaj", (req, res) => {
+    const { wydawca, max, gracze } = req.query;
+    let wynik = gry;
+
+    if (wydawca) {
+        wynik = wynik.filter(
+            (gra) => gra.wydawca.toLowerCase() === wydawca.toLowerCase(),
+        );
+    }
+
+    if (max) {
+        wynik = wynik.filter((gra) => gra.cena <= Number(max));
+    }
+
+    if (gracze) {
+        wynik = wynik.filter((gra) => gra.gracze >= Number(gracze));
+    }
+
+    res.json(wynik);
+});
+
 app.get("/gry/:id", (req, res) => {
     const id = Number(req.params.id);
     const gra = gry.find((element) => element.id === id);
