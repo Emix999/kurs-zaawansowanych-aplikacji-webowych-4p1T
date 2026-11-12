@@ -1,15 +1,14 @@
 {
   "name": "mb06-katalog-gier",
   "version": "1.0.0",
-  "description": "serwer katalogu gier planszowych",
+  "description": "Serwer katalogu gier planszowych",
   "main": "serwer.js",
   "scripts": {
     "start": "node serwer.js",
-    "dev": "nodemon serwer.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon serwer.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Emix999",
   "license": "ISC",
   "type": "module",
   "dependencies": {
