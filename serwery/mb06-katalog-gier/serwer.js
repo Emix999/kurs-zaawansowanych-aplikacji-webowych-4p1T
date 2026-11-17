@@ -27,6 +27,15 @@ app.get("/gry/:id", (req, res)=>{
     res.json(gra);
 })
 
+app.get("/szukaj", (req, res)=>{
+    const {wydawca, max, gracze} = req.query;
+    let wyszukaneGry = gry;
+    if(wydawca)wyszukaneGry = gry.filter((gra)=>wydawca.toLowerCase()==gra.wydawca.toLowerCase())
+    if(max)wyszukaneGry = wyszukaneGry.filter((gra)=>Number(gra.cena)<=Number(max));
+    if(gracze)wyszukaneGry = wyszukaneGry.filter((gra)=>Number(gra.gracze)>=Number(gracze));
+    res.json(wyszukaneGry)
+})
+
 app.get("/gry", (req, res)=>{
     res.json(gry);
 })
