@@ -1,10 +1,13 @@
 import express from "express";
+import { gry } from "./dane.js";
 
 const app = express();
 
 app.get("/gry", (req, res)=>{
-    res.send("Katalog gier planszowych2");
+    res.json(gry);
 })
+
+
 
 app.listen(3000, ()=>{
     console.log("Serwer aktywny na: http://localhost:3000")
