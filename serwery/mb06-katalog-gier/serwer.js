@@ -14,6 +14,19 @@ app.get("/", (req, res) => {
         </ul>`);
 });
 
+app.get("/gry/:id", (req, res)=>{
+    const SzukaneId = req.params.id;
+    const gra = gry.find((g)=>
+        SzukaneId==g.id
+    )
+    if(!gra){
+        res.status(404)
+        res.json({blad:"Nie ma takiej gry"})
+        return;
+    }
+    res.json(gra);
+})
+
 app.get("/gry", (req, res)=>{
     res.json(gry);
 })
