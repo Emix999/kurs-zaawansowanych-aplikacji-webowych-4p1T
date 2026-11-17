@@ -16,5 +16,5 @@ export const wczytaj = async ()=>{
 }
 
 export const zapisz = async (zadania) =>{
-    fs.writeFile(sciezka, JSON.stringify(zadania, null, 2), "utf-8")
+    await fs.writeFile(sciezka, JSON.stringify(zadania, null, 2), "utf-8")
 }
