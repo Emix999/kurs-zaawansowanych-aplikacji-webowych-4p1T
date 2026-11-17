@@ -23,4 +23,18 @@ switch (komenda){
         const newTab = [...tab1, {tekst:argument, zrobione:false}]
         zapisz(newTab)
         console.log("Udało się zapisać nowe zadanie")
+        break;
+    case "zrobione":
+        const tab3 = await wczytaj();
+        let nrZadania=Number(argument)
+        console.log(nrZadania)
+        if(nrZadania>=1 && nrZadania<=tab3.length){
+            const nowaTab = tab3.map((zad, i)=>{
+                return i===nrZadania-1?{...zad, zrobione:true}:zad
+            })
+            await zapisz(nowaTab);
+        }
+        else{
+            throw new Error("Liczba z poza zakresu zadań");
+        }
 }
