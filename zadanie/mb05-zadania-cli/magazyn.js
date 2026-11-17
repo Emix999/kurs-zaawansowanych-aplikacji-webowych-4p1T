@@ -12,6 +12,7 @@ export const wczytaj = async ()=>{
         if(blad.code==="ENOENT"){
             return []
         }
+        throw blad;
     }
 }
 
